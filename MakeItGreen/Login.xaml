@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MakeItGreen.Login"
+             BackgroundColor="White"
+             Title="Login">
+    <StackLayout Padding="20">
+         <!-- โลโก้ -->
+        <Image Source="logo.png" HorizontalOptions="Center" HeightRequest="100"/>
+
+        <!-- ฟอร์มเข้าสู่ระบบ -->
+        <Label Text="เข้าสู่ระบบ" FontSize="20" TextColor="Black" Margin="0,20,0,10"/>
+        
+        <Entry Placeholder="E-mail" x:Name="EmailEntry" Keyboard="Email" BackgroundColor="#F0F0E1" />
+        <Entry Placeholder="Password" x:Name="PasswordEntry" IsPassword="True" BackgroundColor="#F0F0E1" />
+        
+        <!-- ลิงก์ลืมรหัสผ่าน และสมัครสมาชิก -->
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,10,0,0">
+            <Label Text="ลืมรหัสผ่าน" TextColor="Blue" HorizontalOptions="Center" GestureRecognizers="{TapGestureRecognizer Command={Binding ForgotPasswordCommand}}" />
+            <Label Text="|" HorizontalOptions="Center"/>
+            <Label Text="สมัครสมาชิกใหม่" TextColor="Blue" HorizontalOptions="Center" GestureRecognizers="{TapGestureRecognizer Command={Binding RegisterCommand}}" />
+        </StackLayout>
+        
+        <!-- แถบข้อความต้อนรับ -->
+        <Label Text="Welcome to Make it green !" FontSize="14" HorizontalOptions="Center" TextColor="Green" Margin="0,10,0,0"/>
+    </StackLayout>
+</ContentPage>
